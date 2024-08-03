@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Overall table style */
+table {
+    @apply w-11/12 mx-auto my-5 bg-white shadow-lg rounded-lg border-collapse;
+    @apply border-gray-300; /* Softer border color */
+}
+
+/* Header style */
+thead {
+    @apply bg-gray-100 text-gray-800 uppercase text-sm font-semibold;
+    @apply rounded-t-lg; /* Rounded corners for the table header */
+    @apply border-b border-gray-300; /* Bottom border for the header */
+}
+
+th {
+    @apply px-4 py-2 text-left;
+    @apply border-gray-200; /* Softer border color */
+}
+
+/* Specific column width settings */
+th.min, th.alt-add {
+    @apply w-12 text-center;
+}
+
+th.result {
+    @apply text-center cursor-pointer;
+    @apply bg-blue-50 text-blue-600 rounded-t-lg;
+    @apply shadow-sm; /* Subtle shadow effect */
+}
+
+th.alt-add {
+    @apply text-center cursor-pointer;
+    @apply bg-blue-50 text-blue-600 rounded-t-lg;
+    @apply shadow-sm; /* Subtle shadow effect */
+}
+
+/* Table body style */
+tbody tr:nth-child(odd) {
+    @apply bg-gray-50;
+}
+
+tbody tr:nth-child(even) {
+    @apply bg-white;
+}
+
+td {
+    @apply px-4 py-2;
+    @apply border-t border-gray-200; /* Softer border color */
+    @apply align-middle; /* Vertically align content */
+}
+
+/* Redesign for left and right columns */
+td.handle, td.delete {
+    @apply bg-gray-100 text-center cursor-pointer;
+    @apply text-gray-600 font-bold;
+    @apply rounded-md;
+}
+
+td.handle::before {
+    content: "≡"; /* Replaced with icon symbol */
+}
+
+td.delete::before {
+    content: "✕"; /* Replaced with icon symbol */
+    @apply text-red-500;
+}
+
+/* Add column button */
+td.alt-add {
+    @apply bg-blue-50 text-blue-600 text-center cursor-pointer;
+    @apply rounded-md;
+}
+
+/* Non-editable cells */
+td.readonly {
+    @apply bg-gray-100 text-gray-500;
+    @apply rounded-md;
+}
+
+/* Output result cells */
+td.output {
+    @apply bg-green-50 text-green-600 font-semibold;
+    @apply rounded-md;
+}
+
+/* Hover effects */
+td:hover {
+    @apply bg-gray-100;
+}
+
+th:hover, td.handle:hover, td.delete:hover, td.alt-add:hover {
+    @apply bg-gray-200;
+}
